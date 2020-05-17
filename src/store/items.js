@@ -48,22 +48,23 @@ export default {
                 commit('UPDATE_ITEMS', this.itemsList);
                 commit('UPDATE_ITEMS_LIMITED', this.itemsListLimited);
                 commit('SET_LOAD_MORE_BTN_TRUE');
-                // eslint-disable-next-line no-console
-                // console.log(this.itemsListLimited)
             }else{
                 // eslint-disable-next-line no-console
                 console.log(response.status);
             }
         },
         async fetchDetail({commit}, accId){
-            accId = 47
+            // accId = 47
             let response = await fetch('https://swgoh.farm/public/unit/' + accId + '/detail');
             if(response.ok){
-                this.itemDetail = await response.json(); // initial events amount
-                // eslint-disable-next-line no-console
+                this.itemDetail = await response.json();
                 commit('UPDATE_ITEM_DETAIL', this.itemDetail);
                 // eslint-disable-next-line no-console
-                // console.log(this.itemDetail)
+                // console.log('============')
+                // eslint-disable-next-line no-console
+                // console.log(accId)
+                // eslint-disable-next-line no-console
+                // console.log('============')
             }else{
                 // eslint-disable-next-line no-console
                 console.log(response.status);

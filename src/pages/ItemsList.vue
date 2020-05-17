@@ -8,7 +8,7 @@
         <div class="row list__item more-neg-margin" v-for="(item, index) in allItemsLimited" :key="index">
             <div class="col-xl-3">
                 <div class="block more-pad">
-                    <router-link tag="h3" :to="'/accounts/hoard-'+ index" class="">
+                    <router-link tag="h3" :to="'/accounts/hoard-'+ item.id" class="">
                         <a>Hoard-{{ item.id }}</a>
                     </router-link>
                     Level: {{ item.level }}
@@ -27,7 +27,7 @@
                         <span class="list__item-infopart">Main: {{ item.energy }}</span>
                         <span class="list__item-infopart">Cantina: {{ item.cantina }}</span>
                     </div>
-                    <router-link tag="a" :to="'/accounts/hoard-'+ index" class="more-link">
+                    <router-link tag="a" :to="'/accounts/hoard-'+ item.id" class="more-link">
                         More info
                     </router-link>
                 </div>

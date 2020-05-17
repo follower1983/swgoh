@@ -17,11 +17,11 @@
             <div class="col-xl-9">
                 <div class="block more-pad">
                     <div class="row">
-                        <div class="col-xl-6">
+                        <div class="col-lg-6">
                             <div class="detail__infoblock">
                                 <div class="detail__title">Shards:</div>
                                 <span class="detail__infopart">Han Solo: {{ item.hanSolo.shards  }}</span>
-                                <span class="detail__infopart">General Kenobi: {{ item.generalKenobi .shards  }}</span>
+                                <span class="detail__infopart">General Kenobi: {{ item.generalKenobi.shards  }}</span>
                                 <span class="detail__infopart">Darth Traya: {{ item.darthTraya.shards  }}</span>
                             </div>
                             <div class="detail__infoblock">
@@ -42,10 +42,21 @@
                                 <span class="detail__infopart">{{ item.activatedUnitsCount  }}</span>
                             </div>
                         </div>
-                        <div class="col-xl-6">
-                            <div class="detail__title">Additional information:</div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam dolores incidunt magni maxime nisi non quam qui tempora. Alias at autem eligendi excepturi itaque maiores non officia placeat soluta sunt!</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam beatae cum illum maxime modi quisquam soluta. Necessitatibus qui saepe sequi!</p>
+                        <div class="col-lg-6">
+                            <div class="detail__infoblock">
+                                <div class="detail__title">Grind Currency:</div>
+                                <span class="detail__infopart">{{ detailInfo.grindCurrency }}</span>
+                            </div>
+                            <div class="detail__infoblock">
+                                <div class="detail__title">Guild Currency:</div>
+                                <span class="detail__infopart">{{ detailInfo.guildCurrency }}</span>
+                            </div>
+                            <div class="detail__infoblock">
+                                <div class="detail__title">Units:</div>
+                                <span class="detail__infopart" v-for="(unit, index) in detailInfo.units" :key="index">
+                                    <span style="color:#ffc715">{{unit.name}}</span>: Rarity - {{unit.rarity}}, Total shards - <span style="color:#ffc715">{{unit.totalShards}}</span>
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -64,9 +75,10 @@
         // name: "Item",
         data(){
             return {
-                id: this.$router.currentRoute.params['id'],
-                // id: this.$route.params['id']
+                // id: this.$router.currentRoute.params.id,
+                id: this.$route.params.id,
                 item: null,
+                detailInfo: null,
                 showModal: false
             }
         },
@@ -81,22 +93,28 @@
         },
         watch:{
             $route(toRoute){
-                this.id = toRoute.params['id']
+                this.id = toRoute.params.id
             }
         },
         computed: {
             ...mapGetters([
-                'allItems',
+                'allItems', 'detailItem'
             ])
         },
         created() {
-
-            this.item = this.allItems[this.$route.params.id];
+            for(let key in this.allItems){
+                if(parseInt(this.allItems[key].id) === parseInt(this.$route.params.id)){
+                    // eslint-disable-next-line no-console
+                    // console.log(this.allItems[key]);
+                    this.item = this.allItems[key];
+                }
+            }
+            this.detailInfo = this.detailItem;
             // eslint-disable-next-line no-console
-            console.log(this.fetchDetail)
+            console.log(this.detailItem);
         },
         async mounted () {
-            // this.fetchDetail()
+            this.fetchDetail(this.item.id);
         }
     }
 </script>
