@@ -1,0 +1,15 @@
+.detail{
+  &__title{
+    font-weight: 500;
+    color: $yellow;
+    margin-bottom: 10px;
+  }
+  &__infopart{
+
+  }
+  &__infoblock{
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+  }
+}

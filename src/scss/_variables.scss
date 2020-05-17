@@ -1,0 +1,35 @@
+/* colors */
+$black: #151515;
+$white: #ffffff;
+//$main: #d9def2;
+$main: #eaecf3;
+$dark-grey: #545454;
+$dark-grey1: #6C757D;
+$dark-soft-grey: #626262;
+$light-grey: #989898;
+$light-grey1: #D1D1D1;
+$extra-light-grey: #B9B9B9;
+$extra-light-grey1: #E5E5E5;
+$extra-light-grey2: #C4C4C4;
+$milky: #dcdcdc;
+$title-color: #2A4F6F;
+$blue: #1583DA;
+$dark-blue: #073259;
+$yellow: #ffc715;
+$light-orange: #FFF0C9;
+$red: #F51F1F;
+$light-red: #FFDFDF;
+$light-green: #CFF9CE;
+
+/* fonts */
+$title-fz: 20px;
+$title-lh :23px;
+
+/* mixins */
+@mixin block-title{
+  color: $title-color;
+  font-size: $title-fz;
+  line-height: $title-lh;
+}
+
+

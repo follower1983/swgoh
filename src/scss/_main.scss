@@ -1,0 +1,13 @@
+@import '../../node_modules/bootstrap/scss/bootstrap';
+@import '../../node_modules/bootstrap-vue/src/index.scss';
+@import "../scss/_variables.scss";
+@import "../scss/_common.scss";
+@import "../scss/_header.scss";
+@import "../scss/_list.scss";
+@import "../scss/_detail.scss";
+@import "../scss/_modal.scss";
+@import "../scss/_footer.scss";
+.terms{
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
