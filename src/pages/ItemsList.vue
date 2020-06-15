@@ -18,14 +18,29 @@
                 <div class="block more-pad">
                     <div class="list__item-infoblock">
                         <div class="list__item-title">Shards:</div>
-                        <span class="list__item-infopart" v-if="item.hanSolo.shards">Han Solo: {{ item.hanSolo.shards  }}</span>
-                        <span class="list__item-infopart" v-if="item.generalKenobi.shards">General Kenobi: {{ item.generalKenobi .shards  }}</span>
-                        <span class="list__item-infopart" v-if="item.darthTraya.shards">Darth Traya: {{ item.darthTraya.shards  }}</span>
+                        <span class="list__item-infopart" v-if="item.hanSolo.totalShards">
+                            Han Solo:
+                            <span v-if="item.hanSolo.rarity > 0">Rarity - <span class="main-color">{{item.hanSolo.rarity}}</span>, shards - <span class="main-color">{{item.hanSolo.shards}}</span></span>
+                            <span v-else>Shards - <span class="main-color">{{item.hanSolo.totalShards}}</span></span>
+                        </span>
+
+                        <span class="list__item-infopart" v-if="item.generalKenobi.totalShards">General Kenobi:
+                            <span v-if="item.generalKenobi.rarity > 0">Rarity - <span class="main-color">{{item.generalKenobi.rarity}}</span>, shards - <span class="main-color">{{item.generalKenobi.shards}}</span></span>
+                            <span v-else>Shards - <span class="main-color">{{item.generalKenobi.totalShards}}</span></span>
+                        </span>
+
+                        <span class="list__item-infopart" v-if="item.darthTraya.totalShards">Darth Traya:
+                            <span v-if="item.darthTraya.rarity > 0">Rarity - <span class="main-color">{{item.darthTraya.rarity}}</span>, shards - <span class="main-color">{{item.darthTraya.shards}}</span></span>
+                            <span v-else>Shards - <span class="main-color">{{item.darthTraya.totalShards}}</span></span>
+                        </span>
+
+
+
                     </div>
                     <div class="list__item-infoblock">
                         <div class="list__item-title">Energy:</div>
-                        <span class="list__item-infopart">Main: {{ item.energy }}</span>
-                        <span class="list__item-infopart">Cantina: {{ item.cantina }}</span>
+                        <span class="list__item-infopart">Main: {{ item.energy.toLocaleString('us') }}</span>
+                        <span class="list__item-infopart">Cantina: {{ item.cantina.toLocaleString('us') }}</span>
                     </div>
                     <router-link tag="a" :to="'/accounts/hoard-'+ item.id" class="more-link">
                         More info

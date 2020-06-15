@@ -3,6 +3,7 @@ header{
   border-bottom: 3px solid $yellow;
   .button{
     margin-right: 15px;
+    margin-bottom: 15px;
   }
 }
 .nav{
@@ -10,6 +11,8 @@ header{
   margin-bottom: 30px;
   li{
     margin-right: 50px;
+    margin-top: 0;
+    margin-bottom: 0;
     a{
       color: $main;
       font-size: 24px;

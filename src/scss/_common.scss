@@ -27,6 +27,7 @@ body{
   background-image: url(~@/assets/space.jpg);
   background-repeat: repeat;
   background-position: center top;
+  opacity: 0.8;
 }
 .site{
   position: relative;
@@ -147,10 +148,23 @@ button{
     color: $white;
   }
 }
-.button-bottom{
-  margin-top: 30px;
-  margin-bottom: 30px;
+.button{
+  &-bottom{
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  &-middle{
+    margin-left: auto;
+    margin-right: auto;
+  }
+  &-big{
+    height: 50px;
+    font-size: 22px;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
 }
+
 .button-load-more{
   margin-left: auto;
   margin-right: auto;
@@ -161,9 +175,9 @@ button{
   border: none;
   background: none;
   outline: none;
-  margin-top: 30px;
-  margin-left: 30px;
-  margin-bottom: 30px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  font-size: 22px;
   &:before{
     content:"";
     display: block;
@@ -198,6 +212,18 @@ button{
     }
   }
 }
+p{
+  line-height: 29px;
+  margin: 20px 0;
+}
+.main-color{
+  color: $yellow;
+}
+ol, ul{
+  li{
+    margin: 20px 0;
+  }
+}
 h1, .h1like{
   font-size: 44px;
   color: $yellow;
@@ -216,6 +242,7 @@ h3, .h3like{
   font-size: 30px;
   color: $main;
   margin-bottom: 30px;
+  line-height: 41px;
 }
 .block{
   transition: all .3s ease-out;
@@ -259,6 +286,7 @@ h3, .h3like{
     outline: none!important;
   }
 }
+
 
 @media (max-width: 1023px){
   .more-neg-margin{

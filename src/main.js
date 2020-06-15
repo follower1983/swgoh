@@ -31,19 +31,23 @@ Vue.use(VueScrollTo, {
   onCancel: false,
   x: false,
   y: true
-})
+});
 Vue.use(VueParallaxJs, {
   minWidth: 1280,   /* minumum window width for parallax to take effect (number) */
   className: 'bg',  /* this class gets added to all elements that are being animated, by default none (string) */
   // container: window,  /* element that actually scrolls, by default it's window (string) */
 });
-
+router.beforeEach((to, from, next) => {
+  document.title = to.meta.title;
+  next()
+});
 new Vue({
   // vuetify,
   store,
   render: h => h(App),
   router
-}).$mount('#app')
+}).$mount('#app');
+
 
 
 

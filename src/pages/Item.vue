@@ -10,8 +10,9 @@
                 <div class="block more-pad">
                    <h3>Hoard-{{ item.id }}</h3>
                    Level: {{ item.level }}
-                   <button id="show-modal" @click="showModal = true" class="button button-cta">GET ACCOUNT</button>
+                   <button id="show-modal" @click="showModal = true" class="button button-cta">BOOK ACCOUNT</button>
                    <modal v-if="showModal" @close="showModal = false"></modal>
+                    <button @click="goBackToList" class="backlink">Back</button>
                 </div>
             </div>
             <div class="col-xl-9">
@@ -20,22 +21,40 @@
                         <div class="col-lg-6">
                             <div class="detail__infoblock">
                                 <div class="detail__title">Shards:</div>
-                                <span class="detail__infopart">Han Solo: {{ item.hanSolo.shards  }}</span>
-                                <span class="detail__infopart">General Kenobi: {{ item.generalKenobi.shards  }}</span>
-                                <span class="detail__infopart">Darth Traya: {{ item.darthTraya.shards  }}</span>
+                                <!-- solo -->
+                                <span class="detail__infopart">Han Solo:
+                                    <span v-if="item.hanSolo.rarity > 0">Rarity - <span class="main-color">{{item.hanSolo.rarity}}</span>,
+                                        <span v-if="item.hanSolo.shards !==0"> shards - <span class="main-color">{{item.hanSolo.shards}}</span></span>
+                                    </span>
+                                    <span v-else>Shards - <span class="main-color">{{item.hanSolo.totalShards}}</span></span>
+                                </span>
+                                <!-- gk -->
+                                <span class="detail__infopart">General Kenobi:
+                                    <span v-if="item.generalKenobi.rarity > 0">Rarity - <span class="main-color">{{item.generalKenobi.rarity}}</span>,
+                                        <span v-if="item.generalKenobi.shards !==0">shards - <span class="main-color">{{item.generalKenobi.shards}}</span></span>
+                                    </span>
+                                    <span v-else>Shards - <span class="main-color">{{item.generalKenobi.totalShards}}</span></span>
+                                </span>
+                                <!-- traya -->
+                                <span class="detail__infopart">Darth Traya:
+                                    <span v-if="item.darthTraya.rarity > 0">Rarity - <span class="main-color">{{item.darthTraya.rarity}}</span>,
+                                        <span v-if="item.darthTraya.shards !==0">shards - <span class="main-color">{{item.darthTraya.shards}}</span></span>
+                                    </span>
+                                    <span v-else>Shards - <span class="main-color">{{item.darthTraya.totalShards}}</span></span>
+                                </span>
                             </div>
                             <div class="detail__infoblock">
                                 <div class="detail__title">Energy:</div>
-                                <span class="detail__infopart">Main: {{ item.energy }}</span>
-                                <span class="detail__infopart">Cantina: {{ item.cantina }}</span>
+                                <span class="detail__infopart">Main: {{ item.energy.toLocaleString('us') }}</span>
+                                <span class="detail__infopart">Cantina: {{ item.cantina.toLocaleString('us') }}</span>
                             </div>
                             <div class="detail__infoblock">
-                                <div class="detail__title">Premium Currency:</div>
-                                <span class="detail__infopart">{{ item.premiumCurrency }}</span>
+                                <div class="detail__title">Crystals:</div>
+                                <span class="detail__infopart">{{ item.premiumCurrency.toLocaleString('us') }}</span>
                             </div>
                             <div class="detail__infoblock">
                                 <div class="detail__title">Tickets:</div>
-                                <span class="detail__infopart">{{ item.tickets }}</span>
+                                <span class="detail__infopart">{{ item.tickets.toLocaleString('us') }}</span>
                             </div>
                             <div class="detail__infoblock">
                                 <div class="detail__title">Activated units:</div>
@@ -44,24 +63,28 @@
                         </div>
                         <div class="col-lg-6">
                             <div class="detail__infoblock">
-                                <div class="detail__title">Grind Currency:</div>
-                                <span class="detail__infopart">{{ detailInfo.grindCurrency }}</span>
+                                <div class="detail__title">Credits:</div>
+                                <span class="detail__infopart">{{ detailItem.grindCurrency.toLocaleString('us') }}</span>
                             </div>
                             <div class="detail__infoblock">
                                 <div class="detail__title">Guild Currency:</div>
-                                <span class="detail__infopart">{{ detailInfo.guildCurrency }}</span>
+                                <span class="detail__infopart">{{ detailItem.guildCurrency.toLocaleString('us') }}</span>
                             </div>
                             <div class="detail__infoblock">
                                 <div class="detail__title">Units:</div>
-                                <span class="detail__infopart" v-for="(unit, index) in detailInfo.units" :key="index">
-                                    <span style="color:#ffc715">{{unit.name}}</span>: Rarity - {{unit.rarity}}, Total shards - <span style="color:#ffc715">{{unit.totalShards}}</span>
+                                <span class="detail__infopart" v-for="(unit, index) in detailItem.units" :key="index">
+                                    <span v-if="unit.totalShards > 10">
+                                        <span class="main-color">{{capitalizeFirstLetter(unit.name)}}</span>:
+                                        <span v-if="unit.rarity > 0">Rarity - {{unit.rarity}}
+                                            <span v-if="unit.shards !==0">, shards - <span class="main-color">{{unit.shards}}</span></span>
+                                        </span>
+                                        <span v-else>Shards - <span class="main-color">{{unit.totalShards}}</span></span>
+                                    </span>
                                 </span>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <button @click="goBackToList" class="backlink">Back</button>
             </div>
         </div>
 
@@ -76,9 +99,8 @@
         data(){
             return {
                 // id: this.$router.currentRoute.params.id,
-                id: this.$route.params.id,
+                id: this.$route.params.id,  // dont necessary ?
                 item: null,
-                detailInfo: null,
                 showModal: false
             }
         },
@@ -86,10 +108,14 @@
             Modal
         },
         methods:{
+            ...mapActions(['fetchDetail']),
             goBackToList(){
                 this.$router.push('/accounts')
             },
-            ...mapActions(['fetchDetail'])
+            capitalizeFirstLetter(string) {
+                string = string.toLowerCase();
+                return string.charAt(0).toUpperCase() + string.slice(1);
+            }
         },
         watch:{
             $route(toRoute){
@@ -104,17 +130,12 @@
         created() {
             for(let key in this.allItems){
                 if(parseInt(this.allItems[key].id) === parseInt(this.$route.params.id)){
-                    // eslint-disable-next-line no-console
-                    // console.log(this.allItems[key]);
                     this.item = this.allItems[key];
                 }
             }
-            this.detailInfo = this.detailItem;
-            // eslint-disable-next-line no-console
-            console.log(this.detailItem);
         },
         async mounted () {
-            this.fetchDetail(this.item.id);
+            this.fetchDetail(this.$route.params.id);
         }
     }
 </script>

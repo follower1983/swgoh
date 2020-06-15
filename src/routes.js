@@ -8,11 +8,19 @@ export default new VueRouter({
         routes: [
             {
                 path: '', // localhost:8080 (domain)
-                component: Home
+                component: Home,
+                name: 'home',
+                meta: {
+                    title: 'Home'
+                }
             },
             {
                 path: '/accounts', // localhost:8080/accounts (domain)
                 component: ItemsList,
+                name: 'accounts',
+                meta: {
+                    title: 'Accounts'
+                }
                 // children: [
                 //     {
                 //         path: '/accounts/:id',
@@ -22,8 +30,11 @@ export default new VueRouter({
             },
             {
                 path: '/accounts/hoard-:id',
-                name: 'item',
-                component: Item
+                component: Item,
+                name: 'Hoard-:id',
+                meta: {
+                    title: 'Hoard'
+                }
             },
             {
                 path: '*',
