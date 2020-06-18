@@ -8,10 +8,13 @@
         <div class="row list__item more-neg-margin" v-for="(item, index) in allItemsLimited" :key="index">
             <div class="col-xl-3">
                 <div class="block more-pad">
-                    <router-link tag="h3" :to="'/accounts/hoard-'+ item.id" class="">
-                        <a>Hoard-{{ item.id }}</a>
+                    <router-link tag="a" :to="'/accounts/hoard-'+ item.id" class="h3like main-color">
+                       Hoard-{{ item.id }}
                     </router-link>
                     Level: {{ item.level }}
+                    <div v-if="item.reserved" class="reserved-warning">
+                        (Reserved)
+                    </div>
                 </div>
             </div>
             <div class="col-xl-9">
@@ -34,13 +37,11 @@
                             <span v-else>Shards - <span class="main-color">{{item.darthTraya.totalShards}}</span></span>
                         </span>
 
-
-
                     </div>
                     <div class="list__item-infoblock">
                         <div class="list__item-title">Energy:</div>
-                        <span class="list__item-infopart">Main: {{ item.energy.toLocaleString('us') }}</span>
-                        <span class="list__item-infopart">Cantina: {{ item.cantina.toLocaleString('us') }}</span>
+                        <span class="list__item-infopart">Main: {{ item.energy.toLocaleString() }}</span>
+                        <span class="list__item-infopart">Cantina: {{ item.cantina.toLocaleString() }}</span>
                     </div>
                     <router-link tag="a" :to="'/accounts/hoard-'+ item.id" class="more-link">
                         More info

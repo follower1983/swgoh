@@ -8,9 +8,9 @@ body{
 #app{
   //overflow: hidden;
   position: relative;
-  background-image: url(~@/assets/space.jpg);
-  background-repeat: repeat;
-  background-position: center top;
+  //background-image: url(~@/assets/space.jpg);
+  //background-repeat: repeat;
+  //background-position: center top;
 }
 .bg-wrapper{
   position: absolute;
@@ -23,11 +23,12 @@ body{
   position: absolute;
   z-index: 0;
   width: 100%;
+  min-height: 100vh;
   height: 100%;
   background-image: url(~@/assets/space.jpg);
   background-repeat: repeat;
   background-position: center top;
-  opacity: 0.8;
+  opacity: 0.65;
 }
 .site{
   position: relative;
@@ -219,6 +220,10 @@ p{
 .main-color{
   color: $yellow;
 }
+.reserved-warning{
+  color: $red;
+  font-weight: 500;
+}
 ol, ul{
   li{
     margin: 20px 0;
@@ -243,6 +248,11 @@ h3, .h3like{
   color: $main;
   margin-bottom: 30px;
   line-height: 41px;
+  display: block;
+  font-weight: 500;
+  &.main-color{
+    color: $yellow;
+  }
 }
 .block{
   transition: all .3s ease-out;

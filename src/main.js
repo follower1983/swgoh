@@ -44,8 +44,8 @@ router.beforeEach((to, from, next) => {
 new Vue({
   // vuetify,
   store,
+  router,
   render: h => h(App),
-  router
 }).$mount('#app');
 
 

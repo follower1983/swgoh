@@ -45,16 +45,16 @@
                             </div>
                             <div class="detail__infoblock">
                                 <div class="detail__title">Energy:</div>
-                                <span class="detail__infopart">Main: {{ item.energy.toLocaleString('us') }}</span>
-                                <span class="detail__infopart">Cantina: {{ item.cantina.toLocaleString('us') }}</span>
+                                <span class="detail__infopart">Main: {{ item.energy.toLocaleString() }}</span>
+                                <span class="detail__infopart">Cantina: {{ item.cantina.toLocaleString() }}</span>
                             </div>
                             <div class="detail__infoblock">
                                 <div class="detail__title">Crystals:</div>
-                                <span class="detail__infopart">{{ item.premiumCurrency.toLocaleString('us') }}</span>
+                                <span class="detail__infopart">{{ item.premiumCurrency.toLocaleString() }}</span>
                             </div>
                             <div class="detail__infoblock">
                                 <div class="detail__title">Tickets:</div>
-                                <span class="detail__infopart">{{ item.tickets.toLocaleString('us') }}</span>
+                                <span class="detail__infopart">{{ item.tickets.toLocaleString() }}</span>
                             </div>
                             <div class="detail__infoblock">
                                 <div class="detail__title">Activated units:</div>
@@ -64,11 +64,11 @@
                         <div class="col-lg-6">
                             <div class="detail__infoblock">
                                 <div class="detail__title">Credits:</div>
-                                <span class="detail__infopart">{{ detailItem.grindCurrency.toLocaleString('us') }}</span>
+                                <span class="detail__infopart">{{ detailItem.grindCurrency.toLocaleString() }}</span>
                             </div>
                             <div class="detail__infoblock">
                                 <div class="detail__title">Guild Currency:</div>
-                                <span class="detail__infopart">{{ detailItem.guildCurrency.toLocaleString('us') }}</span>
+                                <span class="detail__infopart">{{ detailItem.guildCurrency.toLocaleString() }}</span>
                             </div>
                             <div class="detail__infoblock">
                                 <div class="detail__title">Units:</div>

@@ -5,6 +5,7 @@ import Item from './pages/Item';
 import ErrorComponent from './pages/Error';
 
 export default new VueRouter({
+        mode: 'history',
         routes: [
             {
                 path: '', // localhost:8080 (domain)
@@ -42,7 +43,6 @@ export default new VueRouter({
             }
 
         ],
-        mode: 'history',
         scrollBehavior: function(to) {
             if (to.hash) {
                 return {selector: to.hash}
