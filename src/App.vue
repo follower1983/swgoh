@@ -74,12 +74,16 @@ export default {
         getIdFromUrl(){
             let url = document.location.pathname.substr(16)
             // eslint-disable-next-line no-console
-            console.log(url)
+            // console.log(url)
             return url;
-        }
+        },
+      getLog(){
+          // eslint-disable-next-line no-console
+          // console.log()
+      },
     },
     created(){
-        // this.getIdFromUrl()
+        this.getLog();
     },
     async mounted () {
         this.fetchItems()

@@ -11,21 +11,26 @@ export default new VueRouter({
                 path: '', // localhost:8080 (domain)
                 component: Home,
                 name: 'home',
-                meta: {
-                    title: 'Home'
-                }
+                // meta: {
+                //     title: 'Home',
+                //
+                // }
             },
             {
                 path: '/accounts', // localhost:8080/accounts (domain)
                 component: ItemsList,
                 name: 'accounts',
-                meta: {
-                    title: 'Accounts'
-                }
+                // meta: {
+                //     title: 'Accounts'
+                // }
                 // children: [
                 //     {
-                //         path: '/accounts/:id',
-                //         component: Item
+                //          path: '/accounts/hoard-:id',
+                //                 component: Item,
+                //                 name: 'Hoard-:id',
+                //                 meta: {
+                //                     title: 'Hoard'
+                //                 }
                 //     }
                 // ]
             },
@@ -33,9 +38,9 @@ export default new VueRouter({
                 path: '/accounts/hoard-:id',
                 component: Item,
                 name: 'Hoard-:id',
-                meta: {
-                    title: 'Hoard'
-                }
+                // meta: {
+                //     title: 'Hoard'
+                // }
             },
             {
                 path: '*',

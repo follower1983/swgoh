@@ -49,7 +49,7 @@ export default {
                 commit('UPDATE_ITEMS_LIMITED', this.itemsListLimited);
                 commit('SET_LOAD_MORE_BTN_TRUE');
                 // eslint-disable-next-line no-console
-                console.log(this.itemsList)
+                // console.log(this.itemsList)
             }else{
                 // eslint-disable-next-line no-console
                 console.log(response.status);

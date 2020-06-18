@@ -61,6 +61,17 @@
     import {mapGetters, mapActions} from 'vuex'
     export default {
         name: "ItemsList",
+        metaInfo: {
+            title: 'Hoard accounts SWGOH - choose account',
+            titleTemplate: '%s | Hoard accounts list',
+            meta: [
+                { charset: 'utf-8' },
+                {
+                    name: 'description',
+                    content: 'Hoard accounts SWGOH - choose account'
+                },
+            ]
+        },
         methods :{
             ...mapActions(['loadMoreItems'])
         },

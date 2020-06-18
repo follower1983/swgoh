@@ -17,6 +17,15 @@
                 id: this.$router.currentRoute.params['id']
             }
         },
+        metaInfo: {
+            meta: [
+                { charset: 'utf-8' },
+                {
+                    name: 'description',
+                    content: '404 - not found'
+                },
+            ]
+        },
         methods:{
             goBackToList(){
                 this.$router.push('/')

@@ -117,7 +117,6 @@
 </template>
 
 <script>
-
     export default {
         name: "Home",
         data(){
@@ -125,6 +124,20 @@
 
             }
         },
+        metaInfo: {
+            title: 'SWGOH hoard accounts [Certified seller]',
+            // titleTemplate: '%s | Hoard accounts list',
+            meta: [
+                {
+                    charset: 'utf-8'
+                },
+                {
+                    name: 'description',
+                    content: 'Buy Star Wars Galaxy of Heroes (SWGOH) hoard accounts'
+                },
+            ]
+
+        }
     }
 </script>
 

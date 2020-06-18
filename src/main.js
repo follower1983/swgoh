@@ -12,12 +12,20 @@ import VueCarousel from 'vue-carousel';
 import VueScrollTo from 'vue-scrollto';
 import VueRouter from 'vue-router';
 import router from './routes'
+import VueMeta from 'vue-meta'
 
 // import vuetify from './plugins/vuetify';
 
 Vue.config.productionTip = false;
 Vue.use(require('vue-moment'));
 Vue.use(VueRouter);
+Vue.use(VueMeta, {
+  refreshOnceOnNavigation: true,
+  // keyName: 'metaInfo',
+  // attribute: 'data-vue-meta',
+  // ssrAttribute: 'data-vue-meta-server-rendered',
+  // tagIDKeyName: 'vmid',
+});
 Vue.use(VueCarousel);
 Vue.use(VueScrollTo, {
   container: "body",
@@ -37,10 +45,10 @@ Vue.use(VueParallaxJs, {
   className: 'bg',  /* this class gets added to all elements that are being animated, by default none (string) */
   // container: window,  /* element that actually scrolls, by default it's window (string) */
 });
-router.beforeEach((to, from, next) => {
-  document.title = to.meta.title;
-  next()
-});
+// router.beforeEach((to, from, next) => {
+//   document.title = to.meta.title;
+//   next()
+// });
 new Vue({
   // vuetify,
   store,

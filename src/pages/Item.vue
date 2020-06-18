@@ -104,6 +104,17 @@
                 showModal: false
             }
         },
+        metaInfo: {
+            title: 'SWGOH Hoard account',
+            titleTemplate: '%s | detail information',
+            meta: [
+                { charset: 'utf-8' },
+                {
+                    name: 'description',
+                    content: 'SWGOH Hoard account - detail information'
+                },
+            ]
+        },
         components:{
             Modal
         },
