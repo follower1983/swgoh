@@ -10,13 +10,13 @@
           <div class="row">
             <div class="col-xl-12 more-pad">
               <router-link class="logo" to="/">
-                SORVI
+                SWGOH
                 <div class="logo__description">
                   <span>HOARD</span><br>ACCOUNTS
                 </div>
               </router-link>
             </div>
-            <div class="col-xl-12 more-pad d-flex align-items-center justify-content-sm-between nav-wrap">
+            <div class="col-xl-12 more-pad d-flex justify-content-sm-between nav-wrap">
               <ul class="nav">
                 <router-link tag="li" class="nav-item" to="/" active-class="active" exact>
                   <a>Home</a>
