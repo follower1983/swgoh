@@ -99,7 +99,7 @@
         data(){
             return {
                 // id: this.$router.currentRoute.params.id,
-                id: this.$route.params.id,  // dont necessary ?
+                id: this.$route.params.id,  // not necessary ?
                 item: null,
                 showModal: false
             }

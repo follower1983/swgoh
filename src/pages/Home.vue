@@ -129,7 +129,7 @@
             }
         },
         metaInfo: {
-            title: 'SWGOH hoard accounts [Certified seller]',
+            title: 'SWGOH hoard accounts [Trusted seller]',
             // titleTemplate: '%s | Hoard accounts list',
             meta: [
                 {
@@ -137,10 +137,9 @@
                 },
                 {
                     name: 'description',
-                    content: 'Buy Star Wars Galaxy of Heroes (SWGOH) hoard accounts'
+                    content: 'Unique SWGOH hoard accounts with Darth Traya, General Kenobi and Han Solo. Low price, best service , trusted seller. Buy and dominate from Day 1'
                 },
             ]
-
         }
     }
 </script>

@@ -62,13 +62,13 @@
     export default {
         name: "ItemsList",
         metaInfo: {
-            title: 'Hoard accounts SWGOH - choose account',
+            title: 'SWGOH hoard accounts - choose your account',
             titleTemplate: '%s | Hoard accounts list',
             meta: [
                 { charset: 'utf-8' },
                 {
                     name: 'description',
-                    content: 'Hoard accounts SWGOH - choose account'
+                    content: 'Hoard accounts , Darth Traya , General Kenobi, Han Solo, lots of resources , cheap price , trusted seller'
                 },
             ]
         },
