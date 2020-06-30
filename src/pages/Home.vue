@@ -107,7 +107,7 @@
                     <ol>
                         <li>Choose a hoard account in the "Accounts" menu. Each of them has different qty of resources, shards of raid units, and bronzium units. All info you can find by clicking on ACCOUNTS – MORE INFO buttons</li>
                         <li>Add me in discord and tell me which number of Hoard Account you chose. Each of my Hoard accounts has a unique number and you can find it in the "Accounts" menu. Also, I need to know which platform you have: IOS or Android</li>
-                        <li>Make a Payment directly through Pay Pal to receive an account instantly after payment or with Middleman through PlayerUp payment system</li>
+                        <li>Make a Payment directly through Pay Pal to receive an account instantly after payment or with Middleman through PlayerUp payment system. To buy through PlayerUp middleman service go by <a class="link" href="https://www.playerup.com/threads/48-hoard-accounts-with-gk-solo-traya-lots-of-resources-and-gear-to-dominate-on-the-arenas-from-day-1.4467324/">that link</a> and press BUY NOW button</li>
                         <li>Receive from me Full Google account or Apple ID with chosen Hoard account on it</li>
                     </ol>
                     <router-link tag="button" class="button button-main button-bottom button-middle button-big" to="/accounts/" active-class="active">
@@ -137,7 +137,7 @@
                 },
                 {
                     name: 'description',
-                    content: 'Unique SWGOH hoard accounts with Darth Traya, General Kenobi and Han Solo. Low price, best service , trusted seller. Buy and dominate from Day 1'
+                    content: 'BUY unique SWGOH  hoard accounts by low price from trusted seller on playerup site. Hoard account has darth traya, general kenobi , han solo and lots of resources, energy and gear+ bronzium units.Hoard accounts available for ios and android.Hoard accounts on sale, best service, trusted seller , low price  - buy and dominate from DAY 1 in Star Wars Galaxy of Heroes'
                 },
             ]
         }
