@@ -22,39 +22,46 @@
                             <div class="detail__infoblock">
                                 <div class="detail__title">Shards:</div>
                                 <!-- solo -->
-                                <span class="detail__infopart">Han Solo:
+                                <span v-if="item.hanSolo !== null">
+                                    <span class="detail__infopart">Han Solo:
                                     <span v-if="item.hanSolo.rarity > 0">Rarity - <span class="main-color">{{item.hanSolo.rarity}}</span>,
                                         <span v-if="item.hanSolo.shards !==0"> shards - <span class="main-color">{{item.hanSolo.shards}}</span></span>
                                     </span>
                                     <span v-else>Shards - <span class="main-color">{{item.hanSolo.totalShards}}</span></span>
                                 </span>
+                                </span>
                                 <!-- gk -->
-                                <span class="detail__infopart">General Kenobi:
-                                    <span v-if="item.generalKenobi.rarity > 0">Rarity - <span class="main-color">{{item.generalKenobi.rarity}}</span>,
-                                        <span v-if="item.generalKenobi.shards !==0">shards - <span class="main-color">{{item.generalKenobi.shards}}</span></span>
+                                <span v-if="item.generalKenobi !== null">
+                                    <span class="detail__infopart">General Kenobi:
+                                        <span v-if="item.generalKenobi.rarity > 0">Rarity - <span class="main-color">{{item.generalKenobi.rarity}}</span>,
+                                            <span v-if="item.generalKenobi.shards !==0">shards - <span class="main-color">{{item.generalKenobi.shards}}</span></span>
+                                        </span>
+                                        <span v-else>Shards - <span class="main-color">{{item.generalKenobi.totalShards}}</span></span>
                                     </span>
-                                    <span v-else>Shards - <span class="main-color">{{item.generalKenobi.totalShards}}</span></span>
                                 </span>
                                 <!-- traya -->
-                                <span class="detail__infopart">Darth Traya:
-                                    <span v-if="item.darthTraya.rarity > 0">Rarity - <span class="main-color">{{item.darthTraya.rarity}}</span>,
-                                        <span v-if="item.darthTraya.shards !==0">shards - <span class="main-color">{{item.darthTraya.shards}}</span></span>
+                                <span v-if="item.darthTraya !== null">
+                                    <span class="detail__infopart">Darth Traya:
+                                        <span v-if="item.darthTraya.rarity > 0">Rarity - <span class="main-color">{{item.darthTraya.rarity}}</span>,
+                                            <span v-if="item.darthTraya.shards !==0">shards - <span class="main-color">{{item.darthTraya.shards}}</span></span>
+                                        </span>
+                                        <span v-else>Shards - <span class="main-color">{{item.darthTraya.totalShards}}</span></span>
                                     </span>
-                                    <span v-else>Shards - <span class="main-color">{{item.darthTraya.totalShards}}</span></span>
                                 </span>
+
                             </div>
                             <div class="detail__infoblock">
                                 <div class="detail__title">Energy:</div>
-                                <span class="detail__infopart">Main: {{ item.energy.toLocaleString() }}</span>
-                                <span class="detail__infopart">Cantina: {{ item.cantina.toLocaleString() }}</span>
+                                <span class="detail__infopart">Main: {{ item.energy }}</span>
+                                <span class="detail__infopart">Cantina: {{ item.cantina }}</span>
                             </div>
                             <div class="detail__infoblock">
                                 <div class="detail__title">Crystals:</div>
-                                <span class="detail__infopart">{{ item.premiumCurrency.toLocaleString() }}</span>
+                                <span class="detail__infopart">{{ item.premiumCurrency }}</span>
                             </div>
                             <div class="detail__infoblock">
                                 <div class="detail__title">Tickets:</div>
-                                <span class="detail__infopart">{{ item.tickets.toLocaleString() }}</span>
+                                <span class="detail__infopart">{{ item.tickets }}</span>
                             </div>
                             <div class="detail__infoblock">
                                 <div class="detail__title">Activated units:</div>
@@ -63,12 +70,15 @@
                         </div>
                         <div class="col-lg-6">
                             <div class="detail__infoblock">
+
+                                {{detailItem.price}}
+
                                 <div class="detail__title">Credits:</div>
-                                <span class="detail__infopart">{{ detailItem.grindCurrency.toLocaleString() }}</span>
+                                <span class="detail__infopart">{{ detailItem.grindCurrency }}</span>
                             </div>
                             <div class="detail__infoblock">
                                 <div class="detail__title">Guild Currency:</div>
-                                <span class="detail__infopart">{{ detailItem.guildCurrency.toLocaleString() }}</span>
+                                <span class="detail__infopart">{{ detailItem.guildCurrency }}</span>
                             </div>
                             <div class="detail__infoblock">
                                 <div class="detail__title">Units:</div>

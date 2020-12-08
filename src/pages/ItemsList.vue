@@ -21,18 +21,18 @@
                 <div class="block more-pad">
                     <div class="list__item-infoblock">
                         <div class="list__item-title">Shards:</div>
-                        <span class="list__item-infopart" v-if="item.hanSolo.totalShards">
+                        <span class="list__item-infopart" v-if="item.hanSolo !== null">
                             Han Solo:
                             <span v-if="item.hanSolo.rarity > 0">Rarity - <span class="main-color">{{item.hanSolo.rarity}}</span>, shards - <span class="main-color">{{item.hanSolo.shards}}</span></span>
                             <span v-else>Shards - <span class="main-color">{{item.hanSolo.totalShards}}</span></span>
                         </span>
 
-                        <span class="list__item-infopart" v-if="item.generalKenobi.totalShards">General Kenobi:
+                        <span class="list__item-infopart" v-if="item.generalKenobi !== null ">General Kenobi:
                             <span v-if="item.generalKenobi.rarity > 0">Rarity - <span class="main-color">{{item.generalKenobi.rarity}}</span>, shards - <span class="main-color">{{item.generalKenobi.shards}}</span></span>
                             <span v-else>Shards - <span class="main-color">{{item.generalKenobi.totalShards}}</span></span>
                         </span>
 
-                        <span class="list__item-infopart" v-if="item.darthTraya.totalShards">Darth Traya:
+                        <span class="list__item-infopart" v-if="item.darthTraya !== null">Darth Traya:
                             <span v-if="item.darthTraya.rarity > 0">Rarity - <span class="main-color">{{item.darthTraya.rarity}}</span>, shards - <span class="main-color">{{item.darthTraya.shards}}</span></span>
                             <span v-else>Shards - <span class="main-color">{{item.darthTraya.totalShards}}</span></span>
                         </span>
@@ -43,6 +43,7 @@
                         <span class="list__item-infopart">Main: {{ item.energy.toLocaleString() }}</span>
                         <span class="list__item-infopart">Cantina: {{ item.cantina.toLocaleString() }}</span>
                     </div>
+
                     <router-link tag="a" :to="'/accounts/hoard-'+ item.id" class="more-link">
                         More info
                     </router-link>

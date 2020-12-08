@@ -49,7 +49,7 @@ export default {
                 commit('UPDATE_ITEMS_LIMITED', this.itemsListLimited);
                 commit('SET_LOAD_MORE_BTN_TRUE');
                 // eslint-disable-next-line no-console
-                // console.log(this.itemsList)
+                console.log(this.itemsList)
             }else{
                 // eslint-disable-next-line no-console
                 console.log(response.status);
@@ -57,16 +57,15 @@ export default {
         },
         async fetchDetail({commit}, accId){
             // accId = 47
-            let response = await fetch('https://swgoh.farm/public/unit/' + accId + '/detail');
+            // M-930
+            // let response = await fetch('https://swgoh.farm/public/unit/' + accId + '/detail');
+            // let response = await fetch('https://swgoh.farm/public/unit/M-930/item/global');
+            let response = await fetch('https://swgoh.farm/public/unit/'+ accId +'/item/global');
             if(response.ok){
                 this.itemDetail = await response.json();
                 commit('UPDATE_ITEM_DETAIL', this.itemDetail);
                 // eslint-disable-next-line no-console
-                // console.log('============')
-                // eslint-disable-next-line no-console
-                // console.log(accId)
-                // eslint-disable-next-line no-console
-                // console.log('============')
+                console.log(this.itemDetail)
             }else{
                 // eslint-disable-next-line no-console
                 console.log(response.status);

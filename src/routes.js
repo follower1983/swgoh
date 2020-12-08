@@ -8,39 +8,19 @@ export default new VueRouter({
         mode: 'history',
         routes: [
             {
-                path: '', // localhost:8080 (domain)
+                path: '',
                 component: Home,
                 name: 'home',
-                // meta: {
-                //     title: 'Home',
-                //
-                // }
             },
             {
-                path: '/accounts', // localhost:8080/accounts (domain)
+                path: '/accounts',
                 component: ItemsList,
                 name: 'accounts',
-                // meta: {
-                //     title: 'Accounts'
-                // }
-                // children: [
-                //     {
-                //          path: '/accounts/hoard-:id',
-                //                 component: Item,
-                //                 name: 'Hoard-:id',
-                //                 meta: {
-                //                     title: 'Hoard'
-                //                 }
-                //     }
-                // ]
             },
             {
                 path: '/accounts/hoard-:id',
                 component: Item,
                 name: 'Hoard-:id',
-                // meta: {
-                //     title: 'Hoard'
-                // }
             },
             {
                 path: '*',
