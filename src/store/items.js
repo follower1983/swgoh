@@ -1,7 +1,5 @@
 export default {
     state: {
-        mainPreloader: true,
-        blur: true,
         itemsList: [],
         itemsListLimited: [],
         itemsListLimitedEnd: 10,
@@ -30,7 +28,6 @@ export default {
                 state.showLoadMoreBtn = true;
                 state.itemsListLimitedEnd += 10;
                 state.itemsListLimited = items.slice(0, state.itemsListLimitedEnd);
-
                 if(state.itemsListLimitedEnd.length >= state.itemsList.length){
                     state.showLoadMoreBtn = false
                 }
@@ -87,12 +84,6 @@ export default {
         },
         detailItem (state){
             return state.itemDetail
-        },
-        getPreloaderStatus(state){
-            return state.mainPreloader
-        },
-        getBlurStatus(state){
-            return state.blur
         }
     }
 }
